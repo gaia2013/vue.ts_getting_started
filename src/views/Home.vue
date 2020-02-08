@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+  import { Component, Watch, Vue } from 'vue-property-decorator';
   import MyButton from "@/components/MyButton.vue";
   import ResetButton from "@/components/ResetButton.vue";
 
@@ -28,10 +28,14 @@
     public greetText: string = "Hello";
 
     public get isRegulars(): boolean{
-      if(this.count === 5){
-	alert("常連になりましたw");
-      }
       return this.count >= 5;
+    }
+
+    @Watch('count')
+    public countChanged(){
+      if(this.count === 5){
+	alert("常連になりました");
+      }
     }
 
     public onMyButtonClick(count: number){ // <- 引数で受け取る
