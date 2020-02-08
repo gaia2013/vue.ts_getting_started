@@ -28,6 +28,9 @@
     public greetText: string = "Hello";
 
     public get isRegulars(): boolean{
+      if(this.count === 5){
+	alert("常連になりましたw");
+      }
       return this.count >= 5;
     }
 
