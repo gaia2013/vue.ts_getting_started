@@ -2,7 +2,7 @@
   <div class="home">
     <p>{{greetText}}</p>
     <p>挨拶した回数：{{count}}回</p>
-    <p v-if="isRegulars">いつもありがとうございます</p>
+    <p v-show="isRegulars">いつもありがとうございます</p>
     <p>
 	<MyButton class='my-button' greet="greetText" @click="onMyButtonClick">挨拶する</MyButton>
     </p>
