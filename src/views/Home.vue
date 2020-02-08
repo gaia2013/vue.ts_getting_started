@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <p>{{greetText}}</p>
+    <p>挨拶した回数：{{count}}回</p>
     <p>
 	<MyButton :greet="greetText" @click="onMyButtonClicked"></MyButton>
     </p>
@@ -22,9 +23,11 @@
     },
   })
   export default class Home extends Vue {
+    private count: number = 0;
     public greetText: string = "Hello";
 
-    public onMyButtonClicked(){
+    public onMyButtonClicked(count: number){ // <- 引数で受け取る
+      this.count = count;
       this.greetText = "こんにちは";
     }
   }
