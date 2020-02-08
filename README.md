@@ -1,3 +1,17 @@
+# 自分の環境
+
+```
+$  node -v
+v10.15.2
+
+$ vue -V
+@vue/cli 4.2.2
+
+$ ./node_modules/.bin/tsc --version
+Version 3.7.5
+```
+
+
 # vue-ts-practice
 https://qiita.com/nrslib/items/be90cc19fa3122266fd7
 
