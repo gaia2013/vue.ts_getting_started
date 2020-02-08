@@ -1,5 +1,7 @@
 <template>
-    <button @click="onClick">挨拶する</button>
+    <button class='primary' @click="onClick">
+      <slot></slot>
+    </button>
 </template>
 
 <script lang="ts">
