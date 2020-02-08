@@ -4,7 +4,7 @@
     <p>挨拶した回数：{{count}}回</p>
     <p v-if="isRegulars">いつもありがとうございます</p>
     <p>
-	<MyButton :greet="greetText" @click="onMyButtonClick"></MyButton>
+	<MyButton label="挨拶する" :greet="greetText" @click="onMyButtonClick">挨拶する</MyButton>
     </p>
     <p>
 	<ResetButton v-model="greetText"></ResetButton>
