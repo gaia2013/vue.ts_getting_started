@@ -2,8 +2,9 @@
   <div class="home">
     <p>{{greetText}}</p>
     <p>挨拶した回数：{{count}}回</p>
+    <p v-if="isRegulars">いつもありがとうございます</p>
     <p>
-	<MyButton :greet="greetText" @click="onMyButtonClicked"></MyButton>
+	<MyButton :greet="greetText" @click="onMyButtonClick"></MyButton>
     </p>
     <p>
 	<ResetButton v-model="greetText"></ResetButton>
@@ -26,7 +27,11 @@
     private count: number = 0;
     public greetText: string = "Hello";
 
-    public onMyButtonClicked(count: number){ // <- 引数で受け取る
+    public get isRegulars(): boolean{
+      return this.count >= 5;
+    }
+
+    public onMyButtonClick(count: number){ // <- 引数で受け取る
       this.count = count;
       this.greetText = "こんにちは";
     }
